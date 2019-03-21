@@ -10,9 +10,7 @@
 
 
 @interface DataManager ()
-@property (nonatomic, strong) NSMutableArray *countriesArray;
-@property (nonatomic, strong) NSMutableArray *citiesArray;
-@property (nonatomic, strong) NSMutableArray *airportsArray;
+@property (nonatomic, strong) NSMutableArray *valutesArray;
 @end
 
 @implementation DataManager
@@ -30,14 +28,17 @@
 - (void)loadData
 {
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
-        NSArray *countriesJsonArray = [self arrayFromFileName:@"countries" ofType:@"json"];
-        _countriesArray = [self createObjectsFromArray:countriesJsonArray withType: DataSourceTypeCountry];
+        //NSArray *countriesJsonArray = [self arrayFromFileName:@"countries" ofType:@"json"];
+        //self->_countriesArray = [self createObjectsFromArray:countriesJsonArray withType: DataSourceTypeCountry];
         
-        NSArray *citiesJsonArray = [self arrayFromFileName:@"cities" ofType:@"json"];
-        _citiesArray = [self createObjectsFromArray:citiesJsonArray withType: DataSourceTypeCity];
+       // NSArray *citiesJsonArray = [self arrayFromFileName:@"cities" ofType:@"json"];
+        //self->_citiesArray = [self createObjectsFromArray:citiesJsonArray withType: DataSourceTypeCity];
         
-        NSArray *airportsJsonArray = [self arrayFromFileName:@"airports" ofType:@"json"];
-        _airportsArray = [self createObjectsFromArray:airportsJsonArray withType: DataSourceTypeAirport];
+      //  NSArray *airportsJsonArray = [self arrayFromFileName:@"airports" ofType:@"json"];
+       // self->_airportsArray = [self createObjectsFromArray:airportsJsonArray withType: DataSourceTypeAirport];
+        NSArray *valutesJsonArray = [self arrayFromFileName:@"Valute" ofType:@"json"];
+        //NSLog(@"%@", valutesJsonArray);
+        self->_valutesArray = [self createObjectsFromArray:valutesJsonArray withType: DataSourceTypeValute];
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [[NSNotificationCenter defaultCenter] postNotificationName:kDataManagerLoadDataDidComplete object:nil];
@@ -49,21 +50,15 @@
 - (NSMutableArray *)createObjectsFromArray:(NSArray *)array withType:(DataSourceType)type
 {
     NSMutableArray *results = [NSMutableArray new];
-    
-    for (NSDictionary *jsonObject in array) {
-        if (type == DataSourceTypeCountry) {
-            Country *country = [[Country alloc] initWithDictionary: jsonObject];
-            [results addObject: country];
+    NSArray *vlutesArray = [array valueForKey:@"Valute"];
+    NSLog(@"%@", vlutesArray);
+        for (NSDictionary *dicr in vlutesArray){
+            NSLog(@"%@",[dicr valueForKey:@"Value"]); //НЕ ПОЛУЧАЕТСЯ ЗДЕСЬ ВЗЯТЬ ДАННЫЕ  и дальше в классе соответственно
+            if (type == DataSourceTypeValute) {
+                valute *value = [[valute alloc] initWithDictionary: dicr];
+                [results addObject: value];
+            }
         }
-        else if (type == DataSourceTypeCity) {
-            City *city = [[City alloc] initWithDictionary: jsonObject];
-            [results addObject: city];
-        }
-        else if (type == DataSourceTypeAirport) {
-            Airport *airport = [[Airport alloc] initWithDictionary: jsonObject];
-            [results addObject: airport];
-        }
-    }
     
     return results;
 }
@@ -76,19 +71,9 @@
 }
 
 
-- (NSArray *)countries
+- (NSArray *)valute
 {
-    return _countriesArray;
-}
-
-- (NSArray *)cities
-{
-    return _citiesArray;
-}
-
-- (NSArray *)airports
-{
-    return _airportsArray;
+    return _valutesArray;
 }
 
 @end

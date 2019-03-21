@@ -9,14 +9,12 @@
 #import <Foundation/Foundation.h>
 #import "Country.h"
 #import "City.h"
-#import "Airport.h"
+#import "valute.h"
 
 #define kDataManagerLoadDataDidComplete @"DataManagerLoadDataDidComplete"
 
 typedef enum DataSourceType {
-    DataSourceTypeCountry,
-    DataSourceTypeCity,
-    DataSourceTypeAirport
+    DataSourceTypeValute
 } DataSourceType;
 
 @interface DataManager : NSObject
@@ -25,9 +23,8 @@ typedef enum DataSourceType {
 + (instancetype)sharedInstance;
 - (void)loadData;
 
-@property (nonatomic, strong, readonly) NSArray *countries;
-@property (nonatomic, strong, readonly) NSArray *cities;
-@property (nonatomic, strong, readonly) NSArray *airports;
+@property (nonatomic, strong, readonly) NSArray *valutes;
+@property (nonatomic, strong, readonly) NSString *date;
 
 @end
 

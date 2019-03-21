@@ -9,42 +9,54 @@
 #import "MainViewController.h"
 #import "PlaceViewController.h"
 
-@interface MainViewController ()
-
+@interface MainViewController () <PlaceViewControllerDelegate>
+@property (nonatomic, strong) UIButton *departureButton;
+@property (nonatomic, strong) UIButton *arrivalButton;
+@property (nonatomic) SearchRequest searchRequest;
 @end
 
 @implementation MainViewController
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.view setBackgroundColor:[UIColor whiteColor]];
-    CGRect frame = CGRectMake([UIScreen mainScreen].bounds.size.width/2 - 100.0, [UIScreen mainScreen].bounds.size.height/2 - 25.0, 200.0, 50.0);
-    UIButton *button = [UIButton buttonWithType: UIButtonTypeSystem];
-    [button setTitle:@"Дальше" forState:UIControlStateNormal];
-    button.backgroundColor = [UIColor blueColor];
-    button.tintColor = [UIColor whiteColor];
-    button.frame = frame;
-    [button addTarget:self action:@selector(changeColorButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-}
-
-// Метод, который будет вызван при нажатии на кнопку
-- (void)changeColorButtonDidTap:(UIButton *)sender
-{
-    UIViewController *vc = [[PlaceViewController alloc] init];
     
-    [self.navigationController pushViewController:vc animated:true];
+    [[DataManager sharedInstance] loadData];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.prefersLargeTitles = YES;
+    self.title = @"Валюта";
+    
+    _departureButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_departureButton setTitle:@"Загрузить валюту" forState: UIControlStateNormal];
+    _departureButton.tintColor = [UIColor blackColor];
+    _departureButton.frame = CGRectMake(30.0, 140.0, [UIScreen mainScreen].bounds.size.width - 60.0, 60.0);
+    _departureButton.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
+    [_departureButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_departureButton];
     
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)placeButtonDidTap:(UIButton *)sender {
+    PlaceViewController *placeViewController;
+    if ([sender isEqual:_departureButton]) {
+        placeViewController = [[PlaceViewController alloc] init];
+    }
+    placeViewController.delegate = self;
+    [self.navigationController pushViewController: placeViewController animated:YES];
 }
-*/
+#pragma mark - PlaceViewControllerDelegate
+
+- (void)selectPlace:(id)place withDataType:(DataSourceType)dataType {
+    [self setPlace:place withDataType:dataType];
+}
+
+- (void)setPlace:(id)place withDataType:(DataSourceType)dataType{
+    NSString *title;
+    NSString *iata;
+    if (dataType == DataSourceTypeValute) {
+        valute *city = (valute *)place;
+        title = city.name;
+        iata = city.Value;
+    }
+}
 
 @end
