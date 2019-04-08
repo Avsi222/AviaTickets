@@ -13,13 +13,14 @@
 		9AA8962A22426D61004D79CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA8962822426D61004D79CE /* LaunchScreen.storyboard */; };
 		9AA8962D22426D61004D79CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8962C22426D61004D79CE /* main.m */; };
 		9AA8963522427410004D79CE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8963422427410004D79CE /* MainViewController.m */; };
-		9AA896382242BDFB004D79CE /* Country.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA896372242BDFB004D79CE /* Country.m */; };
-		9AA8963B2242BF48004D79CE /* City.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8963A2242BF48004D79CE /* City.m */; };
-		9AA8963F2242BF8D004D79CE /* Airport.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8963E2242BF8D004D79CE /* Airport.m */; };
+		9AA8963B2242BF48004D79CE /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8963A2242BF48004D79CE /* News.m */; };
 		9AA8964222438814004D79CE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8964122438814004D79CE /* DataManager.m */; };
 		9AA8964822439572004D79CE /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8964722439572004D79CE /* PlaceViewController.m */; };
 		9AA8964B2243AFE2004D79CE /* Valute.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AA8964A2243AFE2004D79CE /* Valute.json */; };
 		9AA8964E2243B10D004D79CE /* valute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8964D2243B10D004D79CE /* valute.m */; };
+		9AD181C8225B376200EF310D /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181C7225B376200EF310D /* NewsViewController.m */; };
+		9AD181CB225B382300EF310D /* NewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181CA225B382300EF310D /* NewsManager.m */; };
+		9AD181CE225B50C200EF310D /* News_Image_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181CD225B50C200EF310D /* News_Image_ViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,12 +34,8 @@
 		9AA8962C22426D61004D79CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9AA8963322427410004D79CE /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		9AA8963422427410004D79CE /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		9AA896362242BDFB004D79CE /* Country.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Country.h; sourceTree = "<group>"; };
-		9AA896372242BDFB004D79CE /* Country.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Country.m; sourceTree = "<group>"; };
-		9AA896392242BF48004D79CE /* City.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = City.h; sourceTree = "<group>"; };
-		9AA8963A2242BF48004D79CE /* City.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = City.m; sourceTree = "<group>"; };
-		9AA8963D2242BF8D004D79CE /* Airport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Airport.h; sourceTree = "<group>"; };
-		9AA8963E2242BF8D004D79CE /* Airport.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Airport.m; sourceTree = "<group>"; };
+		9AA896392242BF48004D79CE /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		9AA8963A2242BF48004D79CE /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
 		9AA8964022438814004D79CE /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		9AA8964122438814004D79CE /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
 		9AA8964622439572004D79CE /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
@@ -46,6 +43,12 @@
 		9AA8964A2243AFE2004D79CE /* Valute.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Valute.json; sourceTree = "<group>"; };
 		9AA8964C2243B10D004D79CE /* valute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = valute.h; sourceTree = "<group>"; };
 		9AA8964D2243B10D004D79CE /* valute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = valute.m; sourceTree = "<group>"; };
+		9AD181C6225B376200EF310D /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		9AD181C7225B376200EF310D /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		9AD181C9225B382300EF310D /* NewsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsManager.h; sourceTree = "<group>"; };
+		9AD181CA225B382300EF310D /* NewsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsManager.m; sourceTree = "<group>"; };
+		9AD181CC225B50C200EF310D /* News_Image_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News_Image_ViewController.h; sourceTree = "<group>"; };
+		9AD181CD225B50C200EF310D /* News_Image_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News_Image_ViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,16 +98,14 @@
 		9AA8963C2242BF4E004D79CE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				9AA896392242BF48004D79CE /* City.h */,
-				9AA8963A2242BF48004D79CE /* City.m */,
-				9AA8963D2242BF8D004D79CE /* Airport.h */,
-				9AA8963E2242BF8D004D79CE /* Airport.m */,
-				9AA896362242BDFB004D79CE /* Country.h */,
-				9AA896372242BDFB004D79CE /* Country.m */,
+				9AA896392242BF48004D79CE /* News.h */,
+				9AA8963A2242BF48004D79CE /* News.m */,
 				9AA8964C2243B10D004D79CE /* valute.h */,
 				9AA8964D2243B10D004D79CE /* valute.m */,
 				9AA8964022438814004D79CE /* DataManager.h */,
 				9AA8964122438814004D79CE /* DataManager.m */,
+				9AD181C9225B382300EF310D /* NewsManager.h */,
+				9AD181CA225B382300EF310D /* NewsManager.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -116,6 +117,10 @@
 				9AA8963422427410004D79CE /* MainViewController.m */,
 				9AA8964622439572004D79CE /* PlaceViewController.h */,
 				9AA8964722439572004D79CE /* PlaceViewController.m */,
+				9AD181C6225B376200EF310D /* NewsViewController.h */,
+				9AD181C7225B376200EF310D /* NewsViewController.m */,
+				9AD181CC225B50C200EF310D /* News_Image_ViewController.h */,
+				9AD181CD225B50C200EF310D /* News_Image_ViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -193,13 +198,14 @@
 				9AA8962522426D5F004D79CE /* AviaTickects.xcdatamodeld in Sources */,
 				9AA8964822439572004D79CE /* PlaceViewController.m in Sources */,
 				9AA8962D22426D61004D79CE /* main.m in Sources */,
-				9AA8963F2242BF8D004D79CE /* Airport.m in Sources */,
 				9AA8964E2243B10D004D79CE /* valute.m in Sources */,
-				9AA8963B2242BF48004D79CE /* City.m in Sources */,
+				9AD181C8225B376200EF310D /* NewsViewController.m in Sources */,
+				9AA8963B2242BF48004D79CE /* News.m in Sources */,
 				9AA8961C22426D5F004D79CE /* AppDelegate.m in Sources */,
+				9AD181CB225B382300EF310D /* NewsManager.m in Sources */,
 				9AA8964222438814004D79CE /* DataManager.m in Sources */,
 				9AA8963522427410004D79CE /* MainViewController.m in Sources */,
-				9AA896382242BDFB004D79CE /* Country.m in Sources */,
+				9AD181CE225B50C200EF310D /* News_Image_ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

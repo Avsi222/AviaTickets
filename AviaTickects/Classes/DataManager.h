@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Country.h"
-#import "City.h"
 #import "valute.h"
+#import "News.h"
 
 #define kDataManagerLoadDataDidComplete @"DataManagerLoadDataDidComplete"
 
@@ -22,8 +21,10 @@ typedef enum DataSourceType {
 
 + (instancetype)sharedInstance;
 - (void)loadData;
+- (News *)cityForIATA:(NSDictionary *)iata;
 
 @property (nonatomic, strong, readonly) NSArray *valutesArray;
+@property (nonatomic, strong, readonly)  NSMutableArray *newsArray;
 @property (nonatomic, strong, readonly) NSString *date;
 
 @end

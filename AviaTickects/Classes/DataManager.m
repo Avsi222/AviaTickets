@@ -11,6 +11,7 @@
 
 @interface DataManager ()
 @property (nonatomic, strong) NSMutableArray *valutesArray;
+@property (nonatomic, strong) NSMutableArray *newsArray;
 @property (nonatomic, strong) NSString *date;
 @end
 
@@ -24,6 +25,31 @@
         instance = [[DataManager alloc] init];
     });
     return instance;
+}
+
+- (News *)cityForIATA:(NSDictionary *)iata {
+    if (iata) {
+        self->_newsArray = [self createNewsFromArray:iata withType: DataSourceTypeValute];
+
+        return _newsArray;
+    }
+    return nil;
+}
+
+- (NSMutableArray *)createNewsFromArray:(NSDictionary *)array withType:(DataSourceType)type
+{
+    NSMutableArray *results = [NSMutableArray new];
+    
+    NSLog(@"%@", array);
+    for (NSString *dicr in array){
+        //NSLog(@"%@", dicr);
+        if (type == DataSourceTypeValute) {
+            News *value = [[News alloc] initWithDictionary: dicr];
+            [results addObject: value];
+        }
+    }
+    
+    return results;
 }
 
 - (void)loadData
