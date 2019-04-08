@@ -14,7 +14,6 @@
 {
     self = [super init];
     if (self) {
-        NSLog(@"%@",dictionary);
         _name = [dictionary valueForKey:@"Name"];
         _CharCode = [dictionary valueForKey:@"CharCode"];
         _Value = [dictionary valueForKey:@"Value"];

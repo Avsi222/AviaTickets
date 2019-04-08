@@ -25,11 +25,11 @@
 - (void)cityForCurrentIP:(void (^)(News *city))completion {
         [self load:[NSString stringWithFormat:@"%@%@", API_URL_CITY_FROM_IP, API_TOKEN] withCompletion:^(id  _Nullable result) {
             NSDictionary *json = result;
-            NSLog(@"The class is %@",[json class]);
+            //NSLog(@"The class is %@",[json class]);
             NSMutableArray *mutableArray = [[NSMutableArray alloc]init];
             
             
-            NSLog(@"Array is: %@",mutableArray);
+            //NSLog(@"Array is: %@",mutableArray);
             NSDictionary *iata = [json valueForKey:@"articles"];
             if (iata) {
                 News *city = [[DataManager sharedInstance] cityForIATA:iata];
@@ -44,7 +44,7 @@
 
 
 - (void)load:(NSString *)urlString withCompletion:(void (^)(id _Nullable result))completion {
-    NSLog(@"%@",urlString);
+    //NSLog(@"%@",urlString);
     dispatch_async(dispatch_get_main_queue(), ^{
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     });
@@ -54,7 +54,7 @@
         });
         NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
         
-        NSLog(@"The class is %@",[json class]);
+        //NSLog(@"The class is %@",[json class]);
         completion([NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil]);
     }] resume] ;
 }

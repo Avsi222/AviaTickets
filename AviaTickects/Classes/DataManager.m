@@ -40,7 +40,7 @@
 {
     NSMutableArray *results = [NSMutableArray new];
     
-    NSLog(@"%@", array);
+    //NSLog(@"%@", array);
     for (NSString *dicr in array){
         //NSLog(@"%@", dicr);
         if (type == DataSourceTypeValute) {

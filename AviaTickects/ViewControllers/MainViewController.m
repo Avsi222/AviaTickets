@@ -9,10 +9,12 @@
 #import "MainViewController.h"
 #import "PlaceViewController.h"
 #import "NewsViewController.h"
+#import "MapViewController.h"
 
 @interface MainViewController () <PlaceViewControllerDelegate>
 @property (nonatomic, strong) UIButton *valuteButton;
 @property (nonatomic, strong) UIButton *newsButton;
+@property (nonatomic, strong) UIButton *mapButton;
 @end
 
 @implementation MainViewController
@@ -23,15 +25,24 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.navigationController.navigationBar.prefersLargeTitles = YES;
-    self.title = @"Валюта";
+    self.title = @"Валютный менеджер";
     
     _valuteButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_valuteButton setTitle:@"Загрузить валюту" forState: UIControlStateNormal];
+    [_valuteButton setTitle:@"Валюта" forState: UIControlStateNormal];
     _valuteButton.tintColor = [UIColor blackColor];
     _valuteButton.frame = CGRectMake(30.0, 140.0, [UIScreen mainScreen].bounds.size.width - 60.0, 60.0);
     _valuteButton.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
     [_valuteButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_valuteButton];
+    
+    _mapButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [_mapButton setTitle:@"Карта" forState: UIControlStateNormal];
+    _mapButton.tintColor = [UIColor blackColor];
+    _mapButton.frame = CGRectMake(30.0, 280.0, [UIScreen mainScreen].bounds.size.width - 60.0, 60.0);
+    _mapButton.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
+    [_mapButton addTarget:self action:@selector(mapButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_mapButton];
+    
     
     _newsButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_newsButton setTitle:@"Новости" forState: UIControlStateNormal];
@@ -55,6 +66,11 @@
     }];
 }
 
+- (void)mapButtonDidTap:(UIButton *)sender {
+    MapViewController *placeViewController;
+    placeViewController = [[MapViewController alloc] init];
+    [self.navigationController pushViewController: placeViewController animated:YES];
+}
 - (void)placeButtonDidTap:(UIButton *)sender {
     PlaceViewController *placeViewController;
     if ([sender isEqual:_valuteButton]) {

@@ -21,6 +21,8 @@
 		9AD181C8225B376200EF310D /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181C7225B376200EF310D /* NewsViewController.m */; };
 		9AD181CB225B382300EF310D /* NewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181CA225B382300EF310D /* NewsManager.m */; };
 		9AD181CE225B50C200EF310D /* News_Image_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181CD225B50C200EF310D /* News_Image_ViewController.m */; };
+		9AD181D1225B5F5E00EF310D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181D0225B5F5E00EF310D /* MapViewController.m */; };
+		9AD181D4225B615E00EF310D /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181D3225B615E00EF310D /* LocationService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,10 @@
 		9AD181CA225B382300EF310D /* NewsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsManager.m; sourceTree = "<group>"; };
 		9AD181CC225B50C200EF310D /* News_Image_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News_Image_ViewController.h; sourceTree = "<group>"; };
 		9AD181CD225B50C200EF310D /* News_Image_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News_Image_ViewController.m; sourceTree = "<group>"; };
+		9AD181CF225B5F5E00EF310D /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		9AD181D0225B5F5E00EF310D /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		9AD181D2225B615E00EF310D /* LocationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		9AD181D3225B615E00EF310D /* LocationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +112,8 @@
 				9AA8964122438814004D79CE /* DataManager.m */,
 				9AD181C9225B382300EF310D /* NewsManager.h */,
 				9AD181CA225B382300EF310D /* NewsManager.m */,
+				9AD181D2225B615E00EF310D /* LocationService.h */,
+				9AD181D3225B615E00EF310D /* LocationService.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -121,6 +129,8 @@
 				9AD181C7225B376200EF310D /* NewsViewController.m */,
 				9AD181CC225B50C200EF310D /* News_Image_ViewController.h */,
 				9AD181CD225B50C200EF310D /* News_Image_ViewController.m */,
+				9AD181CF225B5F5E00EF310D /* MapViewController.h */,
+				9AD181D0225B5F5E00EF310D /* MapViewController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -198,9 +208,11 @@
 				9AA8962522426D5F004D79CE /* AviaTickects.xcdatamodeld in Sources */,
 				9AA8964822439572004D79CE /* PlaceViewController.m in Sources */,
 				9AA8962D22426D61004D79CE /* main.m in Sources */,
+				9AD181D1225B5F5E00EF310D /* MapViewController.m in Sources */,
 				9AA8964E2243B10D004D79CE /* valute.m in Sources */,
 				9AD181C8225B376200EF310D /* NewsViewController.m in Sources */,
 				9AA8963B2242BF48004D79CE /* News.m in Sources */,
+				9AD181D4225B615E00EF310D /* LocationService.m in Sources */,
 				9AA8961C22426D5F004D79CE /* AppDelegate.m in Sources */,
 				9AD181CB225B382300EF310D /* NewsManager.m in Sources */,
 				9AA8964222438814004D79CE /* DataManager.m in Sources */,
