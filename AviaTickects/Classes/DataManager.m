@@ -11,6 +11,7 @@
 
 @interface DataManager ()
 @property (nonatomic, strong) NSMutableArray *valutesArray;
+@property (nonatomic, strong) NSString *date;
 @end
 
 @implementation DataManager
@@ -50,10 +51,12 @@
 - (NSMutableArray *)createObjectsFromArray:(NSArray *)array withType:(DataSourceType)type
 {
     NSMutableArray *results = [NSMutableArray new];
-    NSArray *vlutesArray = [array valueForKey:@"Valute"];
-    NSLog(@"%@", vlutesArray);
-        for (NSDictionary *dicr in vlutesArray){
-            NSLog(@"%@",[dicr valueForKey:@"Value"]); //НЕ ПОЛУЧАЕТСЯ ЗДЕСЬ ВЗЯТЬ ДАННЫЕ  и дальше в классе соответственно
+    self->_date = [array valueForKey:@"Date"];
+    NSDictionary *vlutesArray = [array valueForKey:@"Valute"];
+    
+    //NSLog(@"%@", vlutesArray);
+    for (NSString *dicr in [vlutesArray allValues]){
+            //NSLog(@"%@", dicr);
             if (type == DataSourceTypeValute) {
                 valute *value = [[valute alloc] initWithDictionary: dicr];
                 [results addObject: value];

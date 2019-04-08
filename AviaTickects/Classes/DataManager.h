@@ -23,7 +23,7 @@ typedef enum DataSourceType {
 + (instancetype)sharedInstance;
 - (void)loadData;
 
-@property (nonatomic, strong, readonly) NSArray *valutes;
+@property (nonatomic, strong, readonly) NSArray *valutesArray;
 @property (nonatomic, strong, readonly) NSString *date;
 
 @end

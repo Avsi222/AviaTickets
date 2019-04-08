@@ -35,13 +35,13 @@
     
     _labelWithDate = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 10)];
     _labelWithDate.text = [[DataManager sharedInstance] date];
+    _currentArray = [[DataManager sharedInstance] valutesArray];
     self.navigationItem.titleView = _labelWithDate;
-   
 }
 
 - (void)changeSource
 {
-    _currentArray = [[DataManager sharedInstance] valutes];
+    _currentArray = [[DataManager sharedInstance] valutesArray];
     [self.tableView reloadData];
 }
 
@@ -61,8 +61,8 @@
     }
     
     valute *valuteMon = [_currentArray objectAtIndex:indexPath.row];
-    cell.textLabel.text = valuteMon.name;
-    cell.detailTextLabel.text = valuteMon.Value;
+    cell.textLabel.text = valuteMon.CharCode;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", valuteMon.Value];
     
     return cell;
 }
