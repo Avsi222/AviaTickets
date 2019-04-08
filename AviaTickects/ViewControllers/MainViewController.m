@@ -35,14 +35,6 @@
     [_valuteButton addTarget:self action:@selector(placeButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:_valuteButton];
     
-    _mapButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    [_mapButton setTitle:@"Карта" forState: UIControlStateNormal];
-    _mapButton.tintColor = [UIColor blackColor];
-    _mapButton.frame = CGRectMake(30.0, 280.0, [UIScreen mainScreen].bounds.size.width - 60.0, 60.0);
-    _mapButton.backgroundColor = [[UIColor lightGrayColor] colorWithAlphaComponent:0.3];
-    [_mapButton addTarget:self action:@selector(mapButtonDidTap:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:_mapButton];
-    
     
     _newsButton = [UIButton buttonWithType:UIButtonTypeSystem];
     [_newsButton setTitle:@"Новости" forState: UIControlStateNormal];

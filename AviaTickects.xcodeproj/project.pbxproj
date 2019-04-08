@@ -23,6 +23,7 @@
 		9AD181CE225B50C200EF310D /* News_Image_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181CD225B50C200EF310D /* News_Image_ViewController.m */; };
 		9AD181D1225B5F5E00EF310D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181D0225B5F5E00EF310D /* MapViewController.m */; };
 		9AD181D4225B615E00EF310D /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181D3225B615E00EF310D /* LocationService.m */; };
+		9AD181D7225B6FF600EF310D /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181D6225B6FF600EF310D /* TabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		9AD181D0225B5F5E00EF310D /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		9AD181D2225B615E00EF310D /* LocationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
 		9AD181D3225B615E00EF310D /* LocationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
+		9AD181D5225B6FF600EF310D /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		9AD181D6225B6FF600EF310D /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 				9AD181CD225B50C200EF310D /* News_Image_ViewController.m */,
 				9AD181CF225B5F5E00EF310D /* MapViewController.h */,
 				9AD181D0225B5F5E00EF310D /* MapViewController.m */,
+				9AD181D5225B6FF600EF310D /* TabBarController.h */,
+				9AD181D6225B6FF600EF310D /* TabBarController.m */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,6 +217,7 @@
 				9AA8964E2243B10D004D79CE /* valute.m in Sources */,
 				9AD181C8225B376200EF310D /* NewsViewController.m in Sources */,
 				9AA8963B2242BF48004D79CE /* News.m in Sources */,
+				9AD181D7225B6FF600EF310D /* TabBarController.m in Sources */,
 				9AD181D4225B615E00EF310D /* LocationService.m in Sources */,
 				9AA8961C22426D5F004D79CE /* AppDelegate.m in Sources */,
 				9AD181CB225B382300EF310D /* NewsManager.m in Sources */,

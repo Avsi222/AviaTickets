@@ -13,6 +13,8 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UILabel *labelWithDate;
 @property (nonatomic, strong) NSArray *currentArray;
+@property (nonatomic, strong) NSArray *searchArray;
+@property (nonatomic, strong) UISearchController *searchController;
 @end
 
 @implementation PlaceViewController
@@ -28,9 +30,20 @@
     
     self.navigationController.navigationBar.tintColor = [UIColor blackColor];
     
+    _searchController = [[UISearchController alloc] initWithSearchResultsController:nil];
+    _searchController.dimsBackgroundDuringPresentation = NO;
+    _searchController.searchResultsUpdater = self;
+    _searchArray = [NSArray new];
+    
     _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView.delegate = self;
     _tableView.dataSource = self;
+    if (@available(iOS 11.0, *)) {
+        self.navigationItem.searchController = _searchController;
+    } else {
+        _tableView.tableHeaderView = _searchController.searchBar;
+    }
+
     [self.view addSubview:_tableView];
     
     _labelWithDate = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 100, 10)];
@@ -44,11 +57,25 @@
     _currentArray = [[DataManager sharedInstance] valutesArray];
     [self.tableView reloadData];
 }
+#pragma mark - UISearchResultsUpdating
+
+- (void)updateSearchResultsForSearchController:(UISearchController *)searchController {
+    if (searchController.searchBar.text) {
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.CharCode CONTAINS[cd] %@", searchController.searchBar.text];
+        _searchArray = [_currentArray filteredArrayUsingPredicate: predicate];
+        [_tableView reloadData];
+    }
+}
+
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    if (_searchController.isActive && [_searchArray count] > 0) {
+        return [_searchArray count];
+    }
+
     return [_currentArray count];
 }
 
@@ -60,7 +87,7 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    valute *valuteMon = [_currentArray objectAtIndex:indexPath.row];
+    valute *valuteMon = (_searchController.isActive && [_searchArray count] > 0) ? [_searchArray objectAtIndex:indexPath.row] : [_currentArray objectAtIndex:indexPath.row];
     cell.textLabel.text = valuteMon.CharCode;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", valuteMon.Value];
     
