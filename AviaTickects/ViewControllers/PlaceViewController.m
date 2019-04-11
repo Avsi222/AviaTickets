@@ -87,6 +87,11 @@
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
+    [UIView animateWithDuration:1.0 animations:^{
+        cell.frame = CGRectMake(cell.bounds.size.width, cell.frame.origin.y, 50.0, 50.0);
+    } completion:^(BOOL finished) {
+    }];
+    
     valute *valuteMon = (_searchController.isActive && [_searchArray count] > 0) ? [_searchArray objectAtIndex:indexPath.row] : [_currentArray objectAtIndex:indexPath.row];
     cell.textLabel.text = valuteMon.CharCode;
     cell.detailTextLabel.text = [NSString stringWithFormat:@"%@", valuteMon.Value];

@@ -66,7 +66,10 @@
         cell = [[UITableViewCell alloc] initWithStyle: UITableViewCellStyleSubtitle reuseIdentifier:ReuseIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    
+    [UIView animateWithDuration:1.0 animations:^{
+        cell.frame = CGRectMake(cell.bounds.size.width, cell.frame.origin.y, 50.0, 50.0);
+    } completion:^(BOOL finished) {
+    }];
     News *valuteMon = [_currentArray objectAtIndex:indexPath.row];
     cell.textLabel.text = valuteMon.title;
     cell.detailTextLabel.text = valuteMon.descriptionNews;

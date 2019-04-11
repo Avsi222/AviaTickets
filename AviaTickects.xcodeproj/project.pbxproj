@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A6166A7225F2F1E00EEB6AD /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6166A6225F2F1E00EEB6AD /* ProgressView.m */; };
 		9AA8961C22426D5F004D79CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8961B22426D5F004D79CE /* AppDelegate.m */; };
 		9AA8962522426D5F004D79CE /* AviaTickects.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8962322426D5F004D79CE /* AviaTickects.xcdatamodeld */; };
 		9AA8962722426D61004D79CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA8962622426D61004D79CE /* Assets.xcassets */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A6166A5225F2F1E00EEB6AD /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		9A6166A6225F2F1E00EEB6AD /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		9AA8961722426D5F004D79CE /* AviaTickects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaTickects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA8961A22426D5F004D79CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9AA8961B22426D5F004D79CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -128,6 +131,8 @@
 				9AA8963422427410004D79CE /* MainViewController.m */,
 				9AA8964622439572004D79CE /* PlaceViewController.h */,
 				9AA8964722439572004D79CE /* PlaceViewController.m */,
+				9A6166A5225F2F1E00EEB6AD /* ProgressView.h */,
+				9A6166A6225F2F1E00EEB6AD /* ProgressView.m */,
 				9AD181C6225B376200EF310D /* NewsViewController.h */,
 				9AD181C7225B376200EF310D /* NewsViewController.m */,
 				9AD181CC225B50C200EF310D /* News_Image_ViewController.h */,
@@ -221,6 +226,7 @@
 				9AD181D4225B615E00EF310D /* LocationService.m in Sources */,
 				9AA8961C22426D5F004D79CE /* AppDelegate.m in Sources */,
 				9AD181CB225B382300EF310D /* NewsManager.m in Sources */,
+				9A6166A7225F2F1E00EEB6AD /* ProgressView.m in Sources */,
 				9AA8964222438814004D79CE /* DataManager.m in Sources */,
 				9AA8963522427410004D79CE /* MainViewController.m in Sources */,
 				9AD181CE225B50C200EF310D /* News_Image_ViewController.m in Sources */,

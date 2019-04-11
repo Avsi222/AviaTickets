@@ -10,6 +10,7 @@
 #import "PlaceViewController.h"
 #import "NewsViewController.h"
 #import "MapViewController.h"
+#import "ProgressView.h"
 
 @interface MainViewController () <PlaceViewControllerDelegate>
 @property (nonatomic, strong) UIButton *valuteButton;
@@ -64,19 +65,29 @@
     [self.navigationController pushViewController: placeViewController animated:YES];
 }
 - (void)placeButtonDidTap:(UIButton *)sender {
-    PlaceViewController *placeViewController;
-    if ([sender isEqual:_valuteButton]) {
-        placeViewController = [[PlaceViewController alloc] init];
-    }
-    placeViewController.delegate = self;
-    [self.navigationController pushViewController: placeViewController animated:YES];
+    
+                PlaceViewController *placeViewController;
+                if ([sender isEqual:_valuteButton]) {
+                    placeViewController = [[PlaceViewController alloc] init];
+                }
+                placeViewController.delegate = self;
+                [self.navigationController pushViewController: placeViewController animated:YES];
+
+
 }
 - (void)newsButtonDidTap:(UIButton *)sender {
-    NewsViewController *newsViewController;
-    if ([sender isEqual:_newsButton]) {
-        newsViewController = [[NewsViewController alloc] init];
-    }
-    [self.navigationController pushViewController: newsViewController animated:YES];
+    
+    [[ProgressView sharedInstance] show:^{
+        [[NewsManager sharedInstance] cityForCurrentIP:^(News *city) {
+            [[ProgressView sharedInstance] dismiss:^{
+                NewsViewController *newsViewController;
+                if ([sender isEqual:_newsButton]) {
+                    newsViewController = [[NewsViewController alloc] init];
+                }
+                [self.navigationController pushViewController: newsViewController animated:YES];
+            }];
+        }];
+    }];
 }
 
 
