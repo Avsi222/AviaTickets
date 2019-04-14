@@ -1,5 +1,5 @@
 //
-//  Country.h
+//  City.h
 //  AviaTickects
 //
 //  Created by Арсений Дорогин on 20/03/2019.
@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@interface News : NSObject
 
-@interface Country : NSObject
-
-@property (nonatomic, strong) NSString *name;
-@property (nonatomic, strong) NSString *currency;
-@property (nonatomic, strong) NSDictionary *translations;
-@property (nonatomic, strong) NSString *code;
+@property (nonatomic, strong) NSString *author;
+@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *descriptionNews;
+@property (nonatomic, strong) NSString *urlImage;
 
 - (instancetype)initWithDictionary:(NSDictionary *)dictionary;
 

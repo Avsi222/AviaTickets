@@ -7,11 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "valute.h"
+#import "News.h"
 
-NS_ASSUME_NONNULL_BEGIN
+#define kDataManagerLoadDataDidComplete @"DataManagerLoadDataDidComplete"
+
+typedef enum DataSourceType {
+    DataSourceTypeValute
+} DataSourceType;
 
 @interface DataManager : NSObject
 
+
++ (instancetype)sharedInstance;
+- (void)loadData;
+- (News *)cityForIATA:(NSDictionary *)iata;
+
+@property (nonatomic, strong, readonly) NSArray *valutesArray;
+@property (nonatomic, strong, readonly)  NSMutableArray *newsArray;
+@property (nonatomic, strong, readonly) NSString *date;
+
 @end
 
-NS_ASSUME_NONNULL_END

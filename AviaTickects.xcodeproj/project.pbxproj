@@ -7,27 +7,60 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A6166A7225F2F1E00EEB6AD /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6166A6225F2F1E00EEB6AD /* ProgressView.m */; };
 		9AA8961C22426D5F004D79CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8961B22426D5F004D79CE /* AppDelegate.m */; };
-		9AA8961F22426D5F004D79CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8961E22426D5F004D79CE /* ViewController.m */; };
-		9AA8962222426D5F004D79CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA8962022426D5F004D79CE /* Main.storyboard */; };
 		9AA8962522426D5F004D79CE /* AviaTickects.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8962322426D5F004D79CE /* AviaTickects.xcdatamodeld */; };
 		9AA8962722426D61004D79CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA8962622426D61004D79CE /* Assets.xcassets */; };
 		9AA8962A22426D61004D79CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA8962822426D61004D79CE /* LaunchScreen.storyboard */; };
 		9AA8962D22426D61004D79CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8962C22426D61004D79CE /* main.m */; };
+		9AA8963522427410004D79CE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8963422427410004D79CE /* MainViewController.m */; };
+		9AA8963B2242BF48004D79CE /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8963A2242BF48004D79CE /* News.m */; };
+		9AA8964222438814004D79CE /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8964122438814004D79CE /* DataManager.m */; };
+		9AA8964822439572004D79CE /* PlaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8964722439572004D79CE /* PlaceViewController.m */; };
+		9AA8964B2243AFE2004D79CE /* Valute.json in Resources */ = {isa = PBXBuildFile; fileRef = 9AA8964A2243AFE2004D79CE /* Valute.json */; };
+		9AA8964E2243B10D004D79CE /* valute.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8964D2243B10D004D79CE /* valute.m */; };
+		9AD181C8225B376200EF310D /* NewsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181C7225B376200EF310D /* NewsViewController.m */; };
+		9AD181CB225B382300EF310D /* NewsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181CA225B382300EF310D /* NewsManager.m */; };
+		9AD181CE225B50C200EF310D /* News_Image_ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181CD225B50C200EF310D /* News_Image_ViewController.m */; };
+		9AD181D1225B5F5E00EF310D /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181D0225B5F5E00EF310D /* MapViewController.m */; };
+		9AD181D4225B615E00EF310D /* LocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181D3225B615E00EF310D /* LocationService.m */; };
+		9AD181D7225B6FF600EF310D /* TabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AD181D6225B6FF600EF310D /* TabBarController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9A6166A5225F2F1E00EEB6AD /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		9A6166A6225F2F1E00EEB6AD /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
 		9AA8961722426D5F004D79CE /* AviaTickects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaTickects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA8961A22426D5F004D79CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9AA8961B22426D5F004D79CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		9AA8961D22426D5F004D79CE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		9AA8961E22426D5F004D79CE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		9AA8962122426D5F004D79CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9AA8962422426D5F004D79CE /* AviaTickects.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AviaTickects.xcdatamodel; sourceTree = "<group>"; };
 		9AA8962622426D61004D79CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9AA8962922426D61004D79CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9AA8962B22426D61004D79CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9AA8962C22426D61004D79CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9AA8963322427410004D79CE /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		9AA8963422427410004D79CE /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		9AA896392242BF48004D79CE /* News.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		9AA8963A2242BF48004D79CE /* News.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		9AA8964022438814004D79CE /* DataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
+		9AA8964122438814004D79CE /* DataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
+		9AA8964622439572004D79CE /* PlaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlaceViewController.h; sourceTree = "<group>"; };
+		9AA8964722439572004D79CE /* PlaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlaceViewController.m; sourceTree = "<group>"; };
+		9AA8964A2243AFE2004D79CE /* Valute.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Valute.json; sourceTree = "<group>"; };
+		9AA8964C2243B10D004D79CE /* valute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = valute.h; sourceTree = "<group>"; };
+		9AA8964D2243B10D004D79CE /* valute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = valute.m; sourceTree = "<group>"; };
+		9AD181C6225B376200EF310D /* NewsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsViewController.h; sourceTree = "<group>"; };
+		9AD181C7225B376200EF310D /* NewsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsViewController.m; sourceTree = "<group>"; };
+		9AD181C9225B382300EF310D /* NewsManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsManager.h; sourceTree = "<group>"; };
+		9AD181CA225B382300EF310D /* NewsManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsManager.m; sourceTree = "<group>"; };
+		9AD181CC225B50C200EF310D /* News_Image_ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = News_Image_ViewController.h; sourceTree = "<group>"; };
+		9AD181CD225B50C200EF310D /* News_Image_ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = News_Image_ViewController.m; sourceTree = "<group>"; };
+		9AD181CF225B5F5E00EF310D /* MapViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		9AD181D0225B5F5E00EF310D /* MapViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		9AD181D2225B615E00EF310D /* LocationService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationService.h; sourceTree = "<group>"; };
+		9AD181D3225B615E00EF310D /* LocationService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LocationService.m; sourceTree = "<group>"; };
+		9AD181D5225B6FF600EF310D /* TabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TabBarController.h; sourceTree = "<group>"; };
+		9AD181D6225B6FF600EF310D /* TabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TabBarController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,9 +95,9 @@
 			children = (
 				9AA8961A22426D5F004D79CE /* AppDelegate.h */,
 				9AA8961B22426D5F004D79CE /* AppDelegate.m */,
-				9AA8961D22426D5F004D79CE /* ViewController.h */,
-				9AA8961E22426D5F004D79CE /* ViewController.m */,
-				9AA8962022426D5F004D79CE /* Main.storyboard */,
+				9AA8964A2243AFE2004D79CE /* Valute.json */,
+				9AA896492243957A004D79CE /* ViewControllers */,
+				9AA8963C2242BF4E004D79CE /* Classes */,
 				9AA8962622426D61004D79CE /* Assets.xcassets */,
 				9AA8962822426D61004D79CE /* LaunchScreen.storyboard */,
 				9AA8962B22426D61004D79CE /* Info.plist */,
@@ -72,6 +105,44 @@
 				9AA8962322426D5F004D79CE /* AviaTickects.xcdatamodeld */,
 			);
 			path = AviaTickects;
+			sourceTree = "<group>";
+		};
+		9AA8963C2242BF4E004D79CE /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9AA896392242BF48004D79CE /* News.h */,
+				9AA8963A2242BF48004D79CE /* News.m */,
+				9AA8964C2243B10D004D79CE /* valute.h */,
+				9AA8964D2243B10D004D79CE /* valute.m */,
+				9AA8964022438814004D79CE /* DataManager.h */,
+				9AA8964122438814004D79CE /* DataManager.m */,
+				9AD181C9225B382300EF310D /* NewsManager.h */,
+				9AD181CA225B382300EF310D /* NewsManager.m */,
+				9AD181D2225B615E00EF310D /* LocationService.h */,
+				9AD181D3225B615E00EF310D /* LocationService.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		9AA896492243957A004D79CE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				9AA8963322427410004D79CE /* MainViewController.h */,
+				9AA8963422427410004D79CE /* MainViewController.m */,
+				9AA8964622439572004D79CE /* PlaceViewController.h */,
+				9AA8964722439572004D79CE /* PlaceViewController.m */,
+				9A6166A5225F2F1E00EEB6AD /* ProgressView.h */,
+				9A6166A6225F2F1E00EEB6AD /* ProgressView.m */,
+				9AD181C6225B376200EF310D /* NewsViewController.h */,
+				9AD181C7225B376200EF310D /* NewsViewController.m */,
+				9AD181CC225B50C200EF310D /* News_Image_ViewController.h */,
+				9AD181CD225B50C200EF310D /* News_Image_ViewController.m */,
+				9AD181CF225B5F5E00EF310D /* MapViewController.h */,
+				9AD181D0225B5F5E00EF310D /* MapViewController.m */,
+				9AD181D5225B6FF600EF310D /* TabBarController.h */,
+				9AD181D6225B6FF600EF310D /* TabBarController.m */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,7 +204,7 @@
 			files = (
 				9AA8962A22426D61004D79CE /* LaunchScreen.storyboard in Resources */,
 				9AA8962722426D61004D79CE /* Assets.xcassets in Resources */,
-				9AA8962222426D5F004D79CE /* Main.storyboard in Resources */,
+				9AA8964B2243AFE2004D79CE /* Valute.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,23 +216,26 @@
 			buildActionMask = 2147483647;
 			files = (
 				9AA8962522426D5F004D79CE /* AviaTickects.xcdatamodeld in Sources */,
-				9AA8961F22426D5F004D79CE /* ViewController.m in Sources */,
+				9AA8964822439572004D79CE /* PlaceViewController.m in Sources */,
 				9AA8962D22426D61004D79CE /* main.m in Sources */,
+				9AD181D1225B5F5E00EF310D /* MapViewController.m in Sources */,
+				9AA8964E2243B10D004D79CE /* valute.m in Sources */,
+				9AD181C8225B376200EF310D /* NewsViewController.m in Sources */,
+				9AA8963B2242BF48004D79CE /* News.m in Sources */,
+				9AD181D7225B6FF600EF310D /* TabBarController.m in Sources */,
+				9AD181D4225B615E00EF310D /* LocationService.m in Sources */,
 				9AA8961C22426D5F004D79CE /* AppDelegate.m in Sources */,
+				9AD181CB225B382300EF310D /* NewsManager.m in Sources */,
+				9A6166A7225F2F1E00EEB6AD /* ProgressView.m in Sources */,
+				9AA8964222438814004D79CE /* DataManager.m in Sources */,
+				9AA8963522427410004D79CE /* MainViewController.m in Sources */,
+				9AD181CE225B50C200EF310D /* News_Image_ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		9AA8962022426D5F004D79CE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9AA8962122426D5F004D79CE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		9AA8962822426D61004D79CE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

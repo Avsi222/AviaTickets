@@ -1,8 +1,8 @@
 //
-//  SecondViewController.h
+//  MainViewController.h
 //  AviaTickects
 //
-//  Created by Арсений Дорогин on 21/03/2019.
+//  Created by Арсений Дорогин on 20/03/2019.
 //  Copyright © 2019 Арсений Дорогин. All rights reserved.
 //
 
@@ -10,7 +10,8 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface SecondViewController : UIViewController
+@interface MainViewController : UIViewController
+
 
 @end
 
