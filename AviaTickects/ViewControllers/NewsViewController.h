@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NewsViewController : UIViewController
 - (instancetype)init;
+- (instancetype)initFavoriteTicketsController;
 @end
 
 NS_ASSUME_NONNULL_END

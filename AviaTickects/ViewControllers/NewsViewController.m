@@ -8,6 +8,7 @@
 
 #import "NewsViewController.h"
 #import "News_Image_ViewController.h"
+#import "CoreDataHelper.h"
 
 #define ReuseIdentifier @"CellIdentifier"
 
@@ -18,13 +19,29 @@
 
 @end
 
-@implementation NewsViewController
+@implementation NewsViewController{
+  BOOL isFavorites;
+}
+
+- (instancetype)initFavoriteTicketsController {
+    self = [super init];
+    if (self) {
+        isFavorites = YES;
+        self.currentArray = [NSArray new];
+        self.title = @"Избранное";
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        //[self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:ReuseIdentifier];
+    }
+    return self;
+}
+
 
 - (instancetype)init
 {
     self = [super init];
     return self;
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,6 +58,15 @@
     _labelWithDate.text = @"Новости в России";
     _currentArray = [[DataManager sharedInstance] newsArray];
     self.navigationItem.titleView = _labelWithDate;
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+     [super viewDidAppear:animated];
+    if (isFavorites) {
+        self.navigationController.navigationBar.prefersLargeTitles = YES;
+        _currentArray = [[CoreDataHelper sharedInstance] favorites];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)changeSource
@@ -78,13 +104,34 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger row = [indexPath row];
-    NSLog(@"%ld",(long)row);
+    if (isFavorites) return;
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Действия с новостью" message:@"Что необходимо сделать с выбранной новостью?" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *favoriteAction;
+    UIAlertAction *openAction;
+    openAction = [UIAlertAction actionWithTitle:@"Открыть картинку" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        NSInteger row = [indexPath row];
+        NSLog(@"%ld",(long)row);
+        
+        News_Image_ViewController *placeViewController;
+        News *news_i = [_currentArray objectAtIndex:row];
+        placeViewController = [[News_Image_ViewController alloc] initWithTickets:news_i.urlImage];
+        [self.navigationController pushViewController: placeViewController animated:YES];
+    }];
+    if ([[CoreDataHelper sharedInstance] isFavorite: [_currentArray objectAtIndex:indexPath.row]]) {
+        favoriteAction = [UIAlertAction actionWithTitle:@"Удалить из избранного" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+            [[CoreDataHelper sharedInstance] removeFromFavorite:[self->_currentArray objectAtIndex:indexPath.row]];
+        }];
+    } else {
+        favoriteAction = [UIAlertAction actionWithTitle:@"Добавить в избранное" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            [[CoreDataHelper sharedInstance] addToFavorite:[self->_currentArray objectAtIndex:indexPath.row]];
+        }];
+    }
     
-    News_Image_ViewController *placeViewController;
-    News *news_i = [_currentArray objectAtIndex:row];
-    placeViewController = [[News_Image_ViewController alloc] initWithTickets:news_i.urlImage];
-    [self.navigationController pushViewController: placeViewController animated:YES];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Закрыть" style:UIAlertActionStyleCancel handler:nil];
+    [alertController addAction:favoriteAction];
+    [alertController addAction:cancelAction];
+    [alertController addAction:openAction];
+    [self presentViewController:alertController animated:YES completion:nil];
 }
 
 /*
