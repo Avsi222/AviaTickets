@@ -22,6 +22,8 @@ typedef enum DataSourceType {
 + (instancetype)sharedInstance;
 - (void)loadData;
 - (News *)cityForIATA:(NSDictionary *)iata;
+- (valute *)valutesForIATA:(NSDictionary *)iata;
+- (void)valutesForCurrentIP:(void (^)(valute *city))completion;
 
 @property (nonatomic, strong, readonly) NSArray *valutesArray;
 @property (nonatomic, strong, readonly)  NSMutableArray *newsArray;

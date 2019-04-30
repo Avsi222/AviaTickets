@@ -52,11 +52,11 @@
 
 - (void)startAnimating:(NSInteger)planeId {
     if (!isActive) return;
-    if (planeId >= 6) planeId = 1;
+    if (planeId >= 10) planeId = 1;
     
     UIImageView *plane = [self viewWithTag:planeId];
     if (plane) {
-        [UIView animateWithDuration:1.0 animations:^{
+        [UIView animateWithDuration:1.5 animations:^{
             plane.frame = CGRectMake(self.bounds.size.width, plane.frame.origin.y, 50.0, 50.0);
         } completion:^(BOOL finished) {
             plane.frame = CGRectMake(-50.0, plane.frame.origin.y, 50.0, 50.0);

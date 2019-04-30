@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A44B51D22611B4C00B34C97 /* AviaTickects.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8962322426D5F004D79CE /* AviaTickects.xcdatamodeld */; };
 		9A6166A7225F2F1E00EEB6AD /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6166A6225F2F1E00EEB6AD /* ProgressView.m */; };
+		9A6166B1225F35DB00EEB6AD /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6166B0225F35DB00EEB6AD /* CoreDataHelper.m */; };
+		9A6166B6225F373E00EEB6AD /* NewsFavourite+CoreDataClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6166B4225F373E00EEB6AD /* NewsFavourite+CoreDataClass.m */; };
+		9A6166B7225F373E00EEB6AD /* NewsFavourite+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A6166B5225F373E00EEB6AD /* NewsFavourite+CoreDataProperties.m */; };
 		9AA8961C22426D5F004D79CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8961B22426D5F004D79CE /* AppDelegate.m */; };
-		9AA8962522426D5F004D79CE /* AviaTickects.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8962322426D5F004D79CE /* AviaTickects.xcdatamodeld */; };
 		9AA8962722426D61004D79CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9AA8962622426D61004D79CE /* Assets.xcassets */; };
 		9AA8962A22426D61004D79CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9AA8962822426D61004D79CE /* LaunchScreen.storyboard */; };
 		9AA8962D22426D61004D79CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AA8962C22426D61004D79CE /* main.m */; };
@@ -30,6 +33,12 @@
 /* Begin PBXFileReference section */
 		9A6166A5225F2F1E00EEB6AD /* ProgressView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
 		9A6166A6225F2F1E00EEB6AD /* ProgressView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		9A6166AF225F35DB00EEB6AD /* CoreDataHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		9A6166B0225F35DB00EEB6AD /* CoreDataHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		9A6166B2225F373E00EEB6AD /* NewsFavourite+CoreDataProperties.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsFavourite+CoreDataProperties.h"; sourceTree = "<group>"; };
+		9A6166B3225F373E00EEB6AD /* NewsFavourite+CoreDataClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NewsFavourite+CoreDataClass.h"; sourceTree = "<group>"; };
+		9A6166B4225F373E00EEB6AD /* NewsFavourite+CoreDataClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NewsFavourite+CoreDataClass.m"; sourceTree = "<group>"; };
+		9A6166B5225F373E00EEB6AD /* NewsFavourite+CoreDataProperties.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NewsFavourite+CoreDataProperties.m"; sourceTree = "<group>"; };
 		9AA8961722426D5F004D79CE /* AviaTickects.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AviaTickects.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AA8961A22426D5F004D79CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9AA8961B22426D5F004D79CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -74,6 +83,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A6166AE225F35B400EEB6AD /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				9A6166B2225F373E00EEB6AD /* NewsFavourite+CoreDataProperties.h */,
+				9A6166B3225F373E00EEB6AD /* NewsFavourite+CoreDataClass.h */,
+				9A6166B4225F373E00EEB6AD /* NewsFavourite+CoreDataClass.m */,
+				9A6166B5225F373E00EEB6AD /* NewsFavourite+CoreDataProperties.m */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		9AA8960E22426D5F004D79CE = {
 			isa = PBXGroup;
 			children = (
@@ -110,6 +130,7 @@
 		9AA8963C2242BF4E004D79CE /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				9A6166AE225F35B400EEB6AD /* CoreData */,
 				9AA896392242BF48004D79CE /* News.h */,
 				9AA8963A2242BF48004D79CE /* News.m */,
 				9AA8964C2243B10D004D79CE /* valute.h */,
@@ -120,6 +141,8 @@
 				9AD181CA225B382300EF310D /* NewsManager.m */,
 				9AD181D2225B615E00EF310D /* LocationService.h */,
 				9AD181D3225B615E00EF310D /* LocationService.m */,
+				9A6166AF225F35DB00EEB6AD /* CoreDataHelper.h */,
+				9A6166B0225F35DB00EEB6AD /* CoreDataHelper.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -215,7 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AA8962522426D5F004D79CE /* AviaTickects.xcdatamodeld in Sources */,
+				9A44B51D22611B4C00B34C97 /* AviaTickects.xcdatamodeld in Sources */,
 				9AA8964822439572004D79CE /* PlaceViewController.m in Sources */,
 				9AA8962D22426D61004D79CE /* main.m in Sources */,
 				9AD181D1225B5F5E00EF310D /* MapViewController.m in Sources */,
@@ -223,6 +246,7 @@
 				9AD181C8225B376200EF310D /* NewsViewController.m in Sources */,
 				9AA8963B2242BF48004D79CE /* News.m in Sources */,
 				9AD181D7225B6FF600EF310D /* TabBarController.m in Sources */,
+				9A6166B1225F35DB00EEB6AD /* CoreDataHelper.m in Sources */,
 				9AD181D4225B615E00EF310D /* LocationService.m in Sources */,
 				9AA8961C22426D5F004D79CE /* AppDelegate.m in Sources */,
 				9AD181CB225B382300EF310D /* NewsManager.m in Sources */,
@@ -230,6 +254,8 @@
 				9AA8964222438814004D79CE /* DataManager.m in Sources */,
 				9AA8963522427410004D79CE /* MainViewController.m in Sources */,
 				9AD181CE225B50C200EF310D /* News_Image_ViewController.m in Sources */,
+				9A6166B7225F373E00EEB6AD /* NewsFavourite+CoreDataProperties.m in Sources */,
+				9A6166B6225F373E00EEB6AD /* NewsFavourite+CoreDataClass.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

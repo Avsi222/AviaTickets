@@ -7,7 +7,8 @@
 //
 
 #import "DataManager.h"
-
+#import <UIKit/UIKit.h>
+#define API_URL @"https://www.cbr-xml-daily.ru/daily_json.js"
 
 @interface DataManager ()
 @property (nonatomic, strong) NSMutableArray *valutesArray;
@@ -36,6 +37,15 @@
     return nil;
 }
 
+- (valute *)valuteForIATA:(NSDictionary *)iata {
+    if (iata) {
+        self->_valutesArray = [self createObjectsFromArray:iata withType: DataSourceTypeValute];
+        
+        return _valutesArray;
+    }
+    return nil;
+}
+
 - (NSMutableArray *)createNewsFromArray:(NSDictionary *)array withType:(DataSourceType)type
 {
     NSMutableArray *results = [NSMutableArray new];
@@ -52,26 +62,59 @@
     return results;
 }
 
+- (void)load:(NSString *)urlString withCompletion:(void (^)(id _Nullable result))completion {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
+    });
+    [[[NSURLSession sharedSession] dataTaskWithURL:[NSURL URLWithString:urlString] completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
+        });
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
+        
+        //NSLog(@"The class is %@",[json class]);
+        completion([NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil]);
+    }] resume] ;
+}
+
 - (void)loadData
 {
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_UTILITY, 0), ^{
-        //NSArray *countriesJsonArray = [self arrayFromFileName:@"countries" ofType:@"json"];
-        //self->_countriesArray = [self createObjectsFromArray:countriesJsonArray withType: DataSourceTypeCountry];
         
-       // NSArray *citiesJsonArray = [self arrayFromFileName:@"cities" ofType:@"json"];
-        //self->_citiesArray = [self createObjectsFromArray:citiesJsonArray withType: DataSourceTypeCity];
-        
-      //  NSArray *airportsJsonArray = [self arrayFromFileName:@"airports" ofType:@"json"];
-       // self->_airportsArray = [self createObjectsFromArray:airportsJsonArray withType: DataSourceTypeAirport];
-        NSArray *valutesJsonArray = [self arrayFromFileName:@"Valute" ofType:@"json"];
-        //NSLog(@"%@", valutesJsonArray);
-        self->_valutesArray = [self createObjectsFromArray:valutesJsonArray withType: DataSourceTypeValute];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [[NSNotificationCenter defaultCenter] postNotificationName:kDataManagerLoadDataDidComplete object:nil];
-        });
-        NSLog(@"Complete load data");
+        [self load:[NSString stringWithFormat:@"%@", API_URL] withCompletion:^(id  _Nullable result) {
+            NSDictionary *json = result;
+            
+            self->_valutesArray = [self createObjectsFromArray:json withType: DataSourceTypeValute];
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [[NSNotificationCenter defaultCenter] postNotificationName:kDataManagerLoadDataDidComplete object:nil];
+            });
+            NSLog(@"Complete load data");
+    
+        }];
     });
+}
+
+
+
+- (void)valutesForCurrentIP:(void (^)(valute *valute))completion {
+    [self load:[NSString stringWithFormat:@"%@", API_URL] withCompletion:^(id  _Nullable result) {
+        NSDictionary *json = result;
+        //NSLog(@"The class is %@",[json class]);
+        NSMutableArray *mutableArray = [[NSMutableArray alloc]init];
+        
+        
+        //NSLog(@"Array is: %@",mutableArray);
+        //NSDictionary *iata = [json valueForKey:@"articles"];
+        if (json) {
+            valute *valutess = [[DataManager sharedInstance] valuteForIATA:json];
+            if (valutess) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    completion(valutess);
+                });
+            }
+        }
+    }];
 }
 
 - (NSMutableArray *)createObjectsFromArray:(NSArray *)array withType:(DataSourceType)type
@@ -80,9 +123,7 @@
     self->_date = [array valueForKey:@"Date"];
     NSDictionary *vlutesArray = [array valueForKey:@"Valute"];
     
-    //NSLog(@"%@", vlutesArray);
     for (NSString *dicr in [vlutesArray allValues]){
-            //NSLog(@"%@", dicr);
             if (type == DataSourceTypeValute) {
                 valute *value = [[valute alloc] initWithDictionary: dicr];
                 [results addObject: value];

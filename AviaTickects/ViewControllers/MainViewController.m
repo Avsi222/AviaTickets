@@ -66,13 +66,18 @@
 }
 - (void)placeButtonDidTap:(UIButton *)sender {
     
+    [[ProgressView sharedInstance] show:^{
+        [[DataManager sharedInstance] valutesForCurrentIP:^(valute *valuets){
+            [[ProgressView sharedInstance] dismiss:^{
                 PlaceViewController *placeViewController;
                 if ([sender isEqual:_valuteButton]) {
                     placeViewController = [[PlaceViewController alloc] init];
                 }
                 placeViewController.delegate = self;
                 [self.navigationController pushViewController: placeViewController animated:YES];
-
+            }];
+        }];
+    }];
 
 }
 - (void)newsButtonDidTap:(UIButton *)sender {

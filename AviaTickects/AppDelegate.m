@@ -23,6 +23,8 @@
     CGRect windowFrame = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame: windowFrame];
     
+   NSLog(@"Documents Directory: %@", [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject]);
+    
     TabBarController *tabBarController = [[TabBarController alloc] init];
     
     self.window.rootViewController = tabBarController;
